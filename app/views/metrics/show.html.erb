@@ -1,0 +1,17 @@
+<p>
+  <b>Name:</b>
+  <%=h @metric.name %>
+</p>
+
+<p>
+  <b>Key:</b>
+  <%=h @metric.key %>
+</p>
+
+<p>
+  <img src="<%="/metrics/graph/#{@metric.id}"%>"/>
+</p>
+
+
+<%= link_to 'Edit', edit_metric_path(@metric) %> |
+<%= link_to 'Back', metrics_path %>

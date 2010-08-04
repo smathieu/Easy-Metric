@@ -1,0 +1,1134 @@
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (110.1ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (73.7ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateMetrics (20100726181725)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "metrics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "key" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100726181725')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("metrics")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (172.8ms)[0m   [0;1mCREATE TABLE "metrics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "key" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (79.9ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (95.2ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (78.6ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726181725')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateMetrics (20100726181725)
+Migrating to CreateDataUnits (20100726181834)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TABLE "data_units" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100726181834')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("data_units")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("metrics")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (139.1ms)[0m   [0;1mCREATE TABLE "data_units" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (49.4ms)[0m   [0;1mCREATE TABLE "metrics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "key" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (66.3ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (49.4ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (57.4ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726181834')[0m
+  [4;36;1mSQL (58.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726181725')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (129.5ms)[0m   [0;1mCREATE TABLE "data_units" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (76.0ms)[0m   [0;1mCREATE TABLE "metrics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "key" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (97.9ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (67.7ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (74.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726181834')[0m
+  [4;36;1mSQL (74.9ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726181725')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (94.8ms)[0m   [0;1mCREATE TABLE "data_units" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (68.9ms)[0m   [0;1mCREATE TABLE "metrics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "key" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (79.9ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (69.1ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (65.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726181834')[0m
+  [4;36;1mSQL (66.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726181725')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateMetrics (20100726181725)
+Migrating to CreateDataUnits (20100726181834)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("data_units")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("metrics")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateMetrics (20100726181725)
+Migrating to CreateDataUnits (20100726181834)
+Migrating to AddDataPointToDataUnit (20100726182537)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "data_units" ADD "data_point" number[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100726182537')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("data_units")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("metrics")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (138.6ms)[0m   [0;1mCREATE TABLE "data_units" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "data_point" decimal) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (75.7ms)[0m   [0;1mCREATE TABLE "metrics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "key" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (81.6ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (67.4ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (49.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726182537')[0m
+  [4;36;1mSQL (49.8ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726181725')[0m
+  [4;35;1mSQL (49.9ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726181834')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (132.5ms)[0m   [0;1mCREATE TABLE "data_units" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "data_point" decimal) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (71.1ms)[0m   [0;1mCREATE TABLE "metrics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "key" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (103.4ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (78.8ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (82.3ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726182537')[0m
+  [4;36;1mSQL (74.8ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726181725')[0m
+  [4;35;1mSQL (74.9ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726181834')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (196.0ms)[0m   [0;1mCREATE TABLE "data_units" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "data_point" decimal) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (76.6ms)[0m   [0;1mCREATE TABLE "metrics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "key" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (88.9ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (68.5ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (65.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726182537')[0m
+  [4;36;1mSQL (58.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726181725')[0m
+  [4;35;1mSQL (49.9ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726181834')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (135.1ms)[0m   [0;1mCREATE TABLE "data_units" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "data_point" decimal) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (81.8ms)[0m   [0;1mCREATE TABLE "metrics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "key" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (92.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (81.9ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (65.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726182537')[0m
+  [4;36;1mSQL (66.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726181725')[0m
+  [4;35;1mSQL (66.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726181834')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (177.3ms)[0m   [0;1mCREATE TABLE "data_units" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "data_point" decimal) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (70.8ms)[0m   [0;1mCREATE TABLE "metrics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "key" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (94.7ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (70.8ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (73.9ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726182537')[0m
+  [4;36;1mSQL (74.9ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726181725')[0m
+  [4;35;1mSQL (83.2ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726181834')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (167.8ms)[0m   [0;1mCREATE TABLE "data_units" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "data_point" decimal) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (66.4ms)[0m   [0;1mCREATE TABLE "metrics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "key" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (82.5ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (66.5ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (65.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726182537')[0m
+  [4;36;1mSQL (83.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726181725')[0m
+  [4;35;1mSQL (83.1ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726181834')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (156.0ms)[0m   [0;1mCREATE TABLE "data_units" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "data_point" decimal) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (65.3ms)[0m   [0;1mCREATE TABLE "metrics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "key" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (92.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (82.0ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (74.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726182537')[0m
+  [4;36;1mSQL (83.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726181725')[0m
+  [4;35;1mSQL (74.9ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726181834')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (151.5ms)[0m   [0;1mCREATE TABLE "data_units" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "data_point" decimal) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (63.0ms)[0m   [0;1mCREATE TABLE "metrics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "key" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (78.3ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (62.8ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (57.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726182537')[0m
+  [4;36;1mSQL (58.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726181725')[0m
+  [4;35;1mSQL (58.3ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726181834')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (160.1ms)[0m   [0;1mCREATE TABLE "data_units" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "data_point" decimal) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (75.9ms)[0m   [0;1mCREATE TABLE "metrics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "key" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (98.1ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (84.3ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (74.3ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726182537')[0m
+  [4;36;1mSQL (74.9ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726181725')[0m
+  [4;35;1mSQL (74.9ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726181834')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (146.1ms)[0m   [0;1mCREATE TABLE "data_units" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "data_point" decimal) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (70.1ms)[0m   [0;1mCREATE TABLE "metrics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "key" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (78.8ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (61.8ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (57.3ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726182537')[0m
+  [4;36;1mSQL (58.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726181725')[0m
+  [4;35;1mSQL (58.2ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726181834')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (106.3ms)[0m   [0;1mCREATE TABLE "data_units" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "data_point" decimal) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (49.9ms)[0m   [0;1mCREATE TABLE "metrics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "key" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (65.7ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (49.9ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (49.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726182537')[0m
+  [4;36;1mSQL (58.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726181725')[0m
+  [4;35;1mSQL (58.2ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726181834')[0m
+
+
+Processing MetricsController#graph (for 127.0.0.1 at 2010-07-26 16:51:38) [GET]
+  Parameters: {"id"=>"1"}
+Completed in 300ms (View: 2, DB: 0) | 200 OK [http://localhost/metrics/graph/1]
+Streaming file my_fruity_graph.png
+
+
+Processing MetricsController#graph (for 127.0.0.1 at 2010-07-26 16:51:42) [GET]
+Completed in 219ms (View: 0, DB: 0) | 200 OK [http://localhost/metrics/graph/]
+Streaming file my_fruity_graph.png
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-07-26 16:51:48) [GET]
+  [4;36;1mMetric Load (0.3ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/metrics
+Rendering metrics/index
+Completed in 19ms (View: 9, DB: 0) | 200 OK [http://localhost/metrics/]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-07-26 16:54:05) [GET]
+  [4;35;1mMetric Load (0.2ms)[0m   [0mSELECT * FROM "metrics" [0m
+Rendering template within layouts/metrics
+Rendering metrics/index
+Completed in 5ms (View: 1, DB: 0) | 200 OK [http://localhost/metrics/]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-07-26 16:54:06) [GET]
+  [4;36;1mMetric Load (0.2ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/metrics
+Rendering metrics/index
+Completed in 35ms (View: 1, DB: 0) | 200 OK [http://localhost/metrics/]
+
+
+Processing MetricsController#new (for 127.0.0.1 at 2010-07-26 16:54:10) [GET]
+Rendering template within layouts/metrics
+Rendering metrics/new
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/metrics/new]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-07-26 16:54:15) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"GLacR/UY9GeU3OIc2mICw0pbWVLljuMXOb+WmMWOlcQ=", "metric"=>{"name"=>"Test Coverage", "key"=>"coverage"}}
+  [4;35;1mMetric Load (0.2ms)[0m   [0mSELECT * FROM "metrics" [0m
+Rendering template within layouts/metrics
+Rendering metrics/index
+Completed in 5ms (View: 1, DB: 0) | 200 OK [http://localhost/metrics]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-07-26 16:54:20) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"GLacR/UY9GeU3OIc2mICw0pbWVLljuMXOb+WmMWOlcQ=", "metric"=>{"name"=>"Test Coverage", "key"=>"coverage"}}
+  [4;36;1mMetric Load (0.2ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/metrics
+Rendering metrics/index
+Completed in 5ms (View: 1, DB: 0) | 200 OK [http://localhost/metrics]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-07-26 16:54:24) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mMetric Load (0.3ms)[0m   [0mSELECT * FROM "metrics" [0m
+Rendering template within layouts/metrics
+Rendering metrics/index
+Completed in 8ms (View: 1, DB: 0) | 200 OK [http://localhost/metrics/1]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-07-26 16:54:27) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mMetric Load (0.3ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/metrics
+Rendering metrics/index
+Completed in 6ms (View: 1, DB: 0) | 200 OK [http://localhost/metrics/1]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-07-26 16:54:40) [GET]
+  [4;35;1mMetric Load (0.2ms)[0m   [0mSELECT * FROM "metrics" [0m
+Rendering template within layouts/metrics
+Rendering metrics/index
+Completed in 5ms (View: 1, DB: 0) | 200 OK [http://localhost/metrics]
+
+
+Processing MetricsController#new (for 127.0.0.1 at 2010-07-26 16:54:44) [GET]
+Rendering template within layouts/metrics
+Rendering metrics/new
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/metrics/new]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-07-26 16:54:51) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"GLacR/UY9GeU3OIc2mICw0pbWVLljuMXOb+WmMWOlcQ=", "metric"=>{"name"=>"Code Coverage", "key"=>"coverage"}}
+  [4;36;1mMetric Load (0.2ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/metrics
+Rendering metrics/index
+Completed in 6ms (View: 1, DB: 0) | 200 OK [http://localhost/metrics]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-07-26 16:54:57) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"GLacR/UY9GeU3OIc2mICw0pbWVLljuMXOb+WmMWOlcQ=", "metric"=>{"name"=>"Code Coverage", "key"=>"coverage"}}
+  [4;35;1mMetric Load (0.2ms)[0m   [0mSELECT * FROM "metrics" [0m
+Rendering template within layouts/metrics
+Rendering metrics/index
+Completed in 5ms (View: 1, DB: 0) | 200 OK [http://localhost/metrics]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-07-26 16:55:04) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"GLacR/UY9GeU3OIc2mICw0pbWVLljuMXOb+WmMWOlcQ=", "metric"=>{"name"=>"Code Coverage", "key"=>"coverage"}}
+  [4;36;1mMetric Load (0.2ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/metrics
+Rendering metrics/index
+Completed in 6ms (View: 1, DB: 0) | 200 OK [http://localhost/metrics]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-07-26 16:55:35) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mMetric Load (0.2ms)[0m   [0mSELECT * FROM "metrics" [0m
+Rendering template within layouts/metrics
+Rendering metrics/index
+Completed in 5ms (View: 1, DB: 0) | 200 OK [http://localhost/metrics/1]
+
+
+Processing MetricsController#graph (for 127.0.0.1 at 2010-07-26 16:55:38) [GET]
+Completed in 272ms (View: 0, DB: 0) | 200 OK [http://localhost/metrics/graph]
+Streaming file my_fruity_graph.png
+
+
+Processing MetricsController#edit (for 127.0.0.1 at 2010-07-26 16:55:47) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mMetric Load (0.1ms)[0m   [0;1mSELECT * FROM "metrics" WHERE ("metrics"."id" = 1) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Metric with ID=1):
+  app/controllers/metrics_controller.rb:37:in `edit'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (49.7ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (124.7ms)[0m   [0;1mCREATE TABLE "data_units" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "data_point" decimal) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (73.4ms)[0m   [0;1mCREATE TABLE "metrics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "key" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (84.8ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (64.6ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (57.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726182537')[0m
+  [4;36;1mSQL (58.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726181725')[0m
+  [4;35;1mSQL (58.2ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726181834')[0m
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-07-26 16:57:29) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mMetric Load (0.3ms)[0m   [0mSELECT * FROM "metrics" [0m
+Rendering template within layouts/metrics
+Rendering metrics/index
+Completed in 7ms (View: 1, DB: 0) | 200 OK [http://localhost/metrics/1]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-07-26 16:57:29) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mMetric Load (0.2ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/metrics
+Rendering metrics/index
+Completed in 6ms (View: 1, DB: 0) | 200 OK [http://localhost/metrics/1]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-07-26 16:57:29) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mMetric Load (0.2ms)[0m   [0mSELECT * FROM "metrics" [0m
+Rendering template within layouts/metrics
+Rendering metrics/index
+Completed in 6ms (View: 1, DB: 0) | 200 OK [http://localhost/metrics/1]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-07-26 16:57:30) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mMetric Load (0.3ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/metrics
+Rendering metrics/index
+Completed in 7ms (View: 1, DB: 0) | 200 OK [http://localhost/metrics/1]
+
+
+Processing MetricsController#new (for 127.0.0.1 at 2010-07-26 16:57:39) [GET]
+Rendering template within layouts/metrics
+Rendering metrics/new
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/metrics/new]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-07-26 16:57:48) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"GLacR/UY9GeU3OIc2mICw0pbWVLljuMXOb+WmMWOlcQ=", "metric"=>{"name"=>"Code Coverage", "key"=>"coverage"}}
+  [4;35;1mMetric Load (0.2ms)[0m   [0mSELECT * FROM "metrics" [0m
+Rendering template within layouts/metrics
+Rendering metrics/index
+Completed in 5ms (View: 1, DB: 0) | 200 OK [http://localhost/metrics]
+
+
+Processing MetricsController#new (for 127.0.0.1 at 2010-07-26 17:02:19) [GET]
+Rendering template within layouts/metrics
+Rendering metrics/new
+Completed in 10ms (View: 4, DB: 0) | 200 OK [http://localhost/metrics/new]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-07-26 17:02:21) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"GLacR/UY9GeU3OIc2mICw0pbWVLljuMXOb+WmMWOlcQ=", "metric"=>{"name"=>"a", "key"=>"a"}}
+  [4;36;1mMetric Load (0.2ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/metrics
+Rendering metrics/index
+Completed in 7ms (View: 1, DB: 0) | 200 OK [http://localhost/metrics]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-07-26 17:03:03) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"GLacR/UY9GeU3OIc2mICw0pbWVLljuMXOb+WmMWOlcQ=", "metric"=>{"name"=>"a", "key"=>"a"}}
+  [4;35;1mMetric Load (0.2ms)[0m   [0mSELECT * FROM "metrics" [0m
+Rendering template within layouts/metrics
+Rendering metrics/index
+Completed in 5ms (View: 1, DB: 0) | 200 OK [http://localhost/metrics]
+
+
+Processing MetricsController#new (for 127.0.0.1 at 2010-07-26 17:03:04) [GET]
+Rendering template within layouts/metrics
+Rendering metrics/new
+Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/metrics/new]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-07-26 17:04:09) [GET]
+  [4;36;1mMetric Load (0.3ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/metrics
+Rendering metrics/index
+Completed in 43ms (View: 36, DB: 0) | 200 OK [http://localhost/metrics]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-07-26 17:04:11) [GET]
+  [4;35;1mMetric Load (0.3ms)[0m   [0mSELECT * FROM "metrics" [0m
+Rendering template within layouts/metrics
+Rendering metrics/index
+Completed in 7ms (View: 1, DB: 0) | 200 OK [http://localhost/metrics]
+
+
+Processing MetricsController#new (for 127.0.0.1 at 2010-07-26 17:04:16) [GET]
+Rendering template within layouts/metrics
+Rendering metrics/new
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/metrics/new]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-07-26 17:04:19) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"GLacR/UY9GeU3OIc2mICw0pbWVLljuMXOb+WmMWOlcQ=", "metric"=>{"name"=>"Code Coverage", "key"=>"coverage"}}
+  [4;36;1mMetric Load (0.2ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/metrics
+Rendering metrics/index
+Completed in 5ms (View: 1, DB: 0) | 200 OK [http://localhost/metrics]
+
+
+Processing MetricsController#create (for 127.0.0.1 at 2010-07-26 17:05:12) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mMetric Create (0.2ms)[0m   [0mINSERT INTO "metrics" ("name", "created_at", "updated_at", "key") VALUES(NULL, '2010-07-26 21:05:12', '2010-07-26 21:05:12', NULL)[0m
+Redirected to http://localhost:3000/metrics/1
+Completed in 149ms (DB: 0) | 302 Found [http://localhost/metrics/create/1]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-07-26 17:05:12) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mMetric Load (0.2ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/metrics
+Rendering metrics/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/metrics/1]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-07-26 17:05:17) [DELETE]
+  Parameters: {"authenticity_token"=>"GLacR/UY9GeU3OIc2mICw0pbWVLljuMXOb+WmMWOlcQ=", "id"=>"1"}
+  [4;35;1mMetric Load (0.3ms)[0m   [0mSELECT * FROM "metrics" [0m
+Rendering template within layouts/metrics
+Rendering metrics/index
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/metrics/1]
+
+
+Processing MetricsController#new (for 127.0.0.1 at 2010-07-26 17:06:01) [GET]
+Rendering template within layouts/metrics
+Rendering metrics/new
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/metrics/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-04 15:28:24) [GET]
+
+ActionController::RoutingError (No route matches "/metrc" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-04 15:28:28) [GET]
+  [4;36;1mMetric Load (0.5ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/metrics
+Rendering metrics/index
+Completed in 213ms (View: 160, DB: 1) | 200 OK [http://localhost/metrics]
+
+
+Processing MetricsController#new (for 127.0.0.1 at 2010-08-04 15:28:31) [GET]
+Rendering template within layouts/metrics
+Rendering metrics/new
+Completed in 32ms (View: 26, DB: 0) | 200 OK [http://localhost/metrics/new]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-04 15:28:34) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"mdYskG5u8w+1UjYTB2WbQSBArqFvCjQxyAaVaWXHvUQ=", "metric"=>{"name"=>"test", "key"=>"test"}}
+  [4;35;1mMetric Load (0.2ms)[0m   [0mSELECT * FROM "metrics" [0m
+Rendering template within layouts/metrics
+Rendering metrics/index
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/metrics]
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (17.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (131.7ms)[0m   [0;1mCREATE TABLE "data_units" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "data_point" decimal) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (84.1ms)[0m   [0;1mCREATE TABLE "metrics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "key" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (114.7ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (93.4ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (91.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726182537')[0m
+  [4;36;1mSQL (91.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726181725')[0m
+  [4;35;1mSQL (74.9ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726181834')[0m
+
+
+Processing MetricsController#new (for 127.0.0.1 at 2010-08-04 15:30:42) [GET]
+
+NameError (undefined local variable or method `loger' for #<MetricsController:0x7fe988effa28>):
+  app/controllers/metrics_controller.rb:27:in `new'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (48.9ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MetricsController#new (for 127.0.0.1 at 2010-08-04 15:30:59) [GET]
+New metric
+Rendering template within layouts/metrics
+Rendering metrics/new
+Completed in 11ms (View: 5, DB: 0) | 200 OK [http://localhost/metrics/new]
+
+
+Processing MetricsController#new (for 127.0.0.1 at 2010-08-04 15:31:27) [GET]
+New metric
+Rendering template within layouts/metrics
+Rendering metrics/new
+Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/metrics/new]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-04 15:31:31) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"mdYskG5u8w+1UjYTB2WbQSBArqFvCjQxyAaVaWXHvUQ=", "metric"=>{"name"=>"Code Coverage", "key"=>"test"}}
+  [4;36;1mMetric Load (0.2ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/metrics
+Rendering metrics/index
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/metrics]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-04 15:35:11) [GET]
+  Parameters: {"id"=>"new"}
+  [4;35;1mMetric Load (0.2ms)[0m   [0mSELECT * FROM "metrics" [0m
+Rendering template within layouts/metrics
+Rendering metrics/index
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/metrics/new]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-04 15:35:14) [GET]
+  Parameters: {"id"=>"new"}
+  [4;36;1mMetric Load (0.2ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/metrics
+Rendering metrics/index
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/metrics/new]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-04 15:35:26) [GET]
+  [4;36;1mMetric Load (0.3ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/metrics
+Rendering metrics/index
+Completed in 47ms (View: 39, DB: 0) | 200 OK [http://localhost/metrics]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-04 15:35:30) [DELETE]
+  Parameters: {"authenticity_token"=>"mdYskG5u8w+1UjYTB2WbQSBArqFvCjQxyAaVaWXHvUQ=", "id"=>"1"}
+  [4;35;1mMetric Load (0.3ms)[0m   [0mSELECT * FROM "metrics" [0m
+Rendering template within layouts/metrics
+Rendering metrics/index
+Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/metrics/1]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-04 15:35:33) [GET]
+  Parameters: {"id"=>"new"}
+  [4;36;1mMetric Load (0.2ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/metrics
+Rendering metrics/index
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/metrics/new]
+
+
+Processing MetricsController#new (for 127.0.0.1 at 2010-08-04 15:35:47) [GET]
+New metric
+Rendering template within layouts/metrics
+Rendering metrics/new
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/metrics/new]
+
+
+Processing MetricsController#destroy (for 127.0.0.1 at 2010-08-04 15:35:50) [DELETE]
+  Parameters: {"authenticity_token"=>"mdYskG5u8w+1UjYTB2WbQSBArqFvCjQxyAaVaWXHvUQ=", "id"=>"1"}
+  [4;35;1mMetric Load (0.1ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 1) [0m
+  [4;36;1mMetric Destroy (0.2ms)[0m   [0;1mDELETE FROM "metrics" WHERE "id" = 1[0m
+Redirected to http://localhost:3000/metrics
+Completed in 95ms (DB: 0) | 302 Found [http://localhost/metrics/1]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-04 15:35:50) [GET]
+  [4;35;1mMetric Load (0.2ms)[0m   [0mSELECT * FROM "metrics" [0m
+Rendering template within layouts/metrics
+Rendering metrics/index
+Completed in 5ms (View: 1, DB: 0) | 200 OK [http://localhost/metrics]
+
+
+Processing MetricsController#new (for 127.0.0.1 at 2010-08-04 15:35:51) [GET]
+New metric
+Rendering template within layouts/metrics
+Rendering metrics/new
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://localhost/metrics/new]
+
+
+Processing MetricsController#create (for 127.0.0.1 at 2010-08-04 15:35:54) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"mdYskG5u8w+1UjYTB2WbQSBArqFvCjQxyAaVaWXHvUQ=", "metric"=>{"name"=>"Code Coverage", "key"=>"coverage"}}
+Creating new metric
+  [4;36;1mMetric Create (0.1ms)[0m   [0;1mINSERT INTO "metrics" ("name", "created_at", "updated_at", "key") VALUES('Code Coverage', '2010-08-04 19:35:54', '2010-08-04 19:35:54', 'coverage')[0m
+Redirected to http://localhost:3000/metrics/2
+Completed in 159ms (DB: 0) | 302 Found [http://localhost/metrics]
+
+
+Processing MetricsController#show (for 127.0.0.1 at 2010-08-04 15:35:54) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mMetric Load (0.1ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+Rendering template within layouts/metrics
+Rendering metrics/show
+Completed in 10ms (View: 4, DB: 0) | 200 OK [http://localhost/metrics/2]
+
+
+Processing MetricsController#show (for 127.0.0.1 at 2010-08-04 15:35:54) [GET]
+  Parameters: {"id"=>"graph"}
+  [4;36;1mMetric Load (0.6ms)[0m   [0;1mSELECT * FROM "metrics" WHERE ("metrics"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Metric with ID=graph):
+  app/controllers/metrics_controller.rb:16:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (22.8ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (not_found)
+
+
+Processing MetricsController#show (for 127.0.0.1 at 2010-08-04 15:36:04) [GET]
+  Parameters: {"id"=>"graph"}
+  [4;35;1mMetric Load (0.1ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Metric with ID=graph):
+  app/controllers/metrics_controller.rb:16:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (19.1ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (not_found)
+
+
+Processing MetricsController#show (for 127.0.0.1 at 2010-08-04 15:36:09) [GET]
+  Parameters: {"id"=>"graph"}
+  [4;36;1mMetric Load (0.1ms)[0m   [0;1mSELECT * FROM "metrics" WHERE ("metrics"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Metric with ID=graph):
+  app/controllers/metrics_controller.rb:16:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (18.7ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (not_found)
+
+
+Processing MetricsController#graph (for 127.0.0.1 at 2010-08-04 15:36:14) [GET]
+  Parameters: {"id"=>"1"}
+Completed in 303ms (View: 0, DB: 0) | 200 OK [http://localhost/metrics/graph/1]
+Streaming file my_fruity_graph.png
+
+
+Processing MetricsController#show (for 127.0.0.1 at 2010-08-04 15:38:07) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mMetric Load (0.1ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+Rendering template within layouts/metrics
+Rendering metrics/show
+Completed in 10ms (View: 4, DB: 0) | 200 OK [http://localhost/metrics/2]
+
+
+Processing MetricsController#graph (for 127.0.0.1 at 2010-08-04 15:38:07) [GET]
+  Parameters: {"id"=>"2"}
+Completed in 241ms (View: 0, DB: 0) | 200 OK [http://localhost/metrics/graph/2]
+Streaming file my_fruity_graph.png
