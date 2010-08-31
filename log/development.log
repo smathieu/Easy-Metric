@@ -1132,3 +1132,3567 @@ Processing MetricsController#graph (for 127.0.0.1 at 2010-08-04 15:38:07) [GET]
   Parameters: {"id"=>"2"}
 Completed in 241ms (View: 0, DB: 0) | 200 OK [http://localhost/metrics/graph/2]
 Streaming file my_fruity_graph.png
+
+
+Processing MetricsController#show (for 127.0.0.1 at 2010-08-04 15:49:20) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `accept_nested_attributes_for' for #<Class:0x7f42b951d8a0>):
+  app/models/metric.rb:6
+  app/controllers/metrics_controller.rb:16:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (21.4ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MetricsController#show (for 127.0.0.1 at 2010-08-04 15:52:21) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mMetric Load (0.1ms)[0m   [0;1mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+Rendering template within layouts/metrics
+Rendering metrics/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/metrics/2]
+
+
+Processing MetricsController#graph (for 127.0.0.1 at 2010-08-04 15:52:21) [GET]
+  Parameters: {"id"=>"2"}
+Completed in 285ms (View: 0, DB: 0) | 200 OK [http://localhost/metrics/graph/2]
+Streaming file my_fruity_graph.png
+
+
+Processing MetricsController#edit (for 127.0.0.1 at 2010-08-04 15:52:27) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mMetric Load (0.1ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+Rendering template within layouts/metrics
+Rendering metrics/edit
+
+ActionView::TemplateError (undefined local variable or method `project_form' for #<ActionView::Base:0x7f42b9696ee8>) on line #18 of app/views/metrics/edit.html.erb:
+15:     <%= f.submit 'Update' %>
+16:   </p>
+17: 
+18:    <% project_form.fields_for :data_units do |data_point_form| %>
+19:       <p>
+20:         <div>
+21:           <%= data_point_form.text_field :data_point%>
+
+    app/views/metrics/edit.html.erb:18
+    app/views/metrics/edit.html.erb:3
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (23.1ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MetricsController#edit (for 127.0.0.1 at 2010-08-04 15:52:36) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mMetric Load (0.1ms)[0m   [0;1mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+Rendering template within layouts/metrics
+Rendering metrics/edit
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.new_record?) on line #24 of app/views/metrics/edit.html.erb:
+21:           <%= data_point_form.text_field :data_point%>
+22:         </div>
+23: 
+24:         <% unless data_point_form.object.new_record? %>
+25:           <div>
+26:             <%= data_point_form.label :_delete, 'Remove:' %>
+27:             <%= data_point_form.check_box :_delete %>
+
+    app/views/metrics/edit.html.erb:24
+    app/views/metrics/edit.html.erb:18
+    app/views/metrics/edit.html.erb:3
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (24.0ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MetricsController#edit (for 127.0.0.1 at 2010-08-04 15:53:33) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mMetric Load (0.1ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+Rendering template within layouts/metrics
+Rendering metrics/edit
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://localhost/metrics/2/edit]
+
+
+Processing MetricsController#edit (for 127.0.0.1 at 2010-08-04 15:53:47) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mMetric Load (0.1ms)[0m   [0;1mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+Rendering template within layouts/metrics
+Rendering metrics/edit
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://localhost/metrics/2/edit]
+
+
+Processing MetricsController#update (for 127.0.0.1 at 2010-08-04 15:53:50) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"mdYskG5u8w+1UjYTB2WbQSBArqFvCjQxyAaVaWXHvUQ=", "id"=>"2", "metric"=>{"name"=>"Code Coverage", "data_units"=>{"data_point"=>"1"}, "key"=>"coverage"}}
+  [4;35;1mMetric Load (0.1ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+
+SyntaxError (/home/simon/Documents/ruby/metric/app/models/data_unit.rb:2: syntax error, unexpected ':', expecting kEND
+  belongs_to: :metric
+             ^):
+  app/controllers/metrics_controller.rb:64
+  app/controllers/metrics_controller.rb:63:in `update'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (28.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MetricsController#update (for 127.0.0.1 at 2010-08-04 15:54:14) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"mdYskG5u8w+1UjYTB2WbQSBArqFvCjQxyAaVaWXHvUQ=", "id"=>"2", "metric"=>{"name"=>"Code Coverage", "data_units"=>{"data_point"=>"1"}, "key"=>"coverage"}}
+  [4;36;1mMetric Load (0.1ms)[0m   [0;1mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+
+ActiveRecord::AssociationTypeMismatch (DataUnit(#69962276785820) expected, got Array(#69962335850020)):
+  app/controllers/metrics_controller.rb:64
+  app/controllers/metrics_controller.rb:63:in `update'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (26.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MetricsController#update (for 127.0.0.1 at 2010-08-04 15:55:13) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"mdYskG5u8w+1UjYTB2WbQSBArqFvCjQxyAaVaWXHvUQ=", "id"=>"2", "metric"=>{"name"=>"Code Coverage", "data_units"=>{"data_point"=>"1"}, "key"=>"coverage"}}
+  [4;35;1mMetric Load (0.1ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+
+ActiveRecord::AssociationTypeMismatch (DataUnit(#69962277961980) expected, got Array(#69962335850020)):
+  app/controllers/metrics_controller.rb:65
+  app/controllers/metrics_controller.rb:64:in `update'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (22.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MetricsController#update (for 127.0.0.1 at 2010-08-04 15:57:24) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"mdYskG5u8w+1UjYTB2WbQSBArqFvCjQxyAaVaWXHvUQ=", "id"=>"2", "metric"=>{"name"=>"Code Coverage", "data_units"=>{"data_point"=>"1"}, "key"=>"coverage"}}
+  [4;36;1mMetric Load (0.1ms)[0m   [0;1mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+
+ActiveRecord::AssociationTypeMismatch (DataUnit(#69962276841700) expected, got Array(#69962335850020)):
+  app/controllers/metrics_controller.rb:66
+  app/controllers/metrics_controller.rb:65:in `update'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (22.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MetricsController#update (for 127.0.0.1 at 2010-08-04 15:59:56) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"mdYskG5u8w+1UjYTB2WbQSBArqFvCjQxyAaVaWXHvUQ=", "id"=>"2", "metric"=>{"name"=>"Code Coverage", "data_units"=>{"data_point"=>"1"}, "key"=>"coverage"}}
+  [4;35;1mMetric Load (0.1ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+
+ActiveRecord::AssociationTypeMismatch (DataUnit(#69962277998360) expected, got Array(#69962335850020)):
+  app/controllers/metrics_controller.rb:65
+  app/controllers/metrics_controller.rb:64:in `update'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (22.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MetricsController#update (for 127.0.0.1 at 2010-08-04 16:00:03) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"mdYskG5u8w+1UjYTB2WbQSBArqFvCjQxyAaVaWXHvUQ=", "id"=>"2", "metric"=>{"name"=>"Code Coverage", "data_units"=>{"data_point"=>"1"}, "key"=>"coverage"}}
+  [4;36;1mMetric Load (0.1ms)[0m   [0;1mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+
+ActiveRecord::AssociationTypeMismatch (DataUnit(#69962276911680) expected, got Array(#69962335850020)):
+  app/controllers/metrics_controller.rb:65
+  app/controllers/metrics_controller.rb:64:in `update'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (22.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MetricsController#update (for 127.0.0.1 at 2010-08-04 16:00:10) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"mdYskG5u8w+1UjYTB2WbQSBArqFvCjQxyAaVaWXHvUQ=", "id"=>"2", "metric"=>{"name"=>"Code Coverage", "data_units"=>{"data_point"=>"1"}, "key"=>"coverage"}}
+  [4;35;1mMetric Load (0.1ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+
+ActiveRecord::AssociationTypeMismatch (DataUnit(#69962278062340) expected, got Array(#69962335850020)):
+  app/controllers/metrics_controller.rb:65
+  app/controllers/metrics_controller.rb:64:in `update'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (24.6ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MetricsController#update (for 127.0.0.1 at 2010-08-04 16:00:32) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"mdYskG5u8w+1UjYTB2WbQSBArqFvCjQxyAaVaWXHvUQ=", "id"=>"2", "metric"=>{"name"=>"Code Coverage", "data_units"=>{"data_point"=>"1"}, "key"=>"coverage"}}
+
+***** Debugger requested, but was not available: Start server with --debugger to enable *****
+  [4;36;1mMetric Load (0.1ms)[0m   [0;1mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+
+ActiveRecord::AssociationTypeMismatch (DataUnit(#69962276947600) expected, got Array(#69962335850020)):
+  app/controllers/metrics_controller.rb:65
+  app/controllers/metrics_controller.rb:64:in `update'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (22.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MetricsController#update (for 127.0.0.1 at 2010-08-04 16:01:00) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"mdYskG5u8w+1UjYTB2WbQSBArqFvCjQxyAaVaWXHvUQ=", "id"=>"2", "metric"=>{"name"=>"Code Coverage", "data_units"=>{"data_point"=>"1"}, "key"=>"coverage"}}
+  [4;36;1mMetric Load (0.2ms)[0m   [0;1mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+
+ActiveRecord::AssociationTypeMismatch (DataUnit(#70022546725500) expected, got Array(#70022597217820)):
+  app/controllers/metrics_controller.rb:65
+  app/controllers/metrics_controller.rb:64:in `update'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (66.9ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (122.9ms)[0m   [0;1mCREATE TABLE "data_units" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "data_point" decimal) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (85.3ms)[0m   [0;1mCREATE TABLE "metrics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "key" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (113.3ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (85.6ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (99.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726182537')[0m
+  [4;36;1mSQL (99.8ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726181725')[0m
+  [4;35;1mSQL (91.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726181834')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (119.8ms)[0m   [0;1mCREATE TABLE "data_units" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "data_point" decimal) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (61.9ms)[0m   [0;1mCREATE TABLE "metrics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "key" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (78.5ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (62.1ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (57.3ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726182537')[0m
+  [4;36;1mSQL (58.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726181725')[0m
+  [4;35;1mSQL (58.2ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726181834')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (129.7ms)[0m   [0;1mCREATE TABLE "data_units" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "data_point" decimal) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (90.4ms)[0m   [0;1mCREATE TABLE "metrics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "key" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (117.6ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (98.4ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (99.4ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726182537')[0m
+  [4;36;1mSQL (99.8ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726181725')[0m
+  [4;35;1mSQL (99.9ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726181834')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (185.1ms)[0m   [0;1mCREATE TABLE "data_units" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "data_point" decimal) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (84.9ms)[0m   [0;1mCREATE TABLE "metrics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "key" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (89.5ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (68.1ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (66.1ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726182537')[0m
+  [4;36;1mSQL (66.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726181725')[0m
+  [4;35;1mSQL (66.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726181834')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (128.1ms)[0m   [0;1mCREATE TABLE "data_units" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "data_point" decimal) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (87.0ms)[0m   [0;1mCREATE TABLE "metrics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "key" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (103.3ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (87.3ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (82.3ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726182537')[0m
+  [4;36;1mSQL (83.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726181725')[0m
+  [4;35;1mSQL (83.2ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726181834')[0m
+
+
+Processing MetricsController#show (for 127.0.0.1 at 2010-08-04 16:08:06) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mMetric Load (0.1ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+Rendering template within layouts/metrics
+Rendering metrics/show
+Completed in 15ms (View: 10, DB: 0) | 200 OK [http://localhost/metrics/2]
+
+
+Processing MetricsController#graph (for 127.0.0.1 at 2010-08-04 16:08:06) [GET]
+  Parameters: {"id"=>"2"}
+Completed in 394ms (View: 0, DB: 0) | 200 OK [http://localhost/metrics/graph/2]
+Streaming file my_fruity_graph.png
+
+
+Processing MetricsController#graph (for 127.0.0.1 at 2010-08-04 16:08:44) [GET]
+  Parameters: {"id"=>"2"}
+Completed in 279ms (View: 0, DB: 0) | 200 OK [http://localhost/metrics/graph/2]
+Streaming file my_fruity_graph.png
+
+
+Processing MetricsController#graph (for 127.0.0.1 at 2010-08-04 16:08:48) [GET]
+  Parameters: {"id"=>"2"}
+Completed in 217ms (View: 0, DB: 0) | 200 OK [http://localhost/metrics/2/graph]
+Streaming file my_fruity_graph.png
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (127.1ms)[0m   [0;1mCREATE TABLE "data_units" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "data_point" decimal) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (80.9ms)[0m   [0;1mCREATE TABLE "metrics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "key" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (92.6ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (73.5ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (57.3ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726182537')[0m
+  [4;36;1mSQL (59.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726181725')[0m
+  [4;35;1mSQL (56.9ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726181834')[0m
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-04 16:09:15) [GET]
+  [4;36;1mMetric Load (0.3ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/metrics
+Rendering metrics/index
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://localhost/metrics]
+
+
+Processing MetricsController#edit (for 127.0.0.1 at 2010-08-04 16:09:17) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mMetric Load (0.1ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+Rendering template within layouts/metrics
+Rendering metrics/edit
+Completed in 16ms (View: 10, DB: 0) | 200 OK [http://localhost/metrics/2/edit]
+
+
+Processing MetricsController#update (for 127.0.0.1 at 2010-08-04 16:09:19) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"mdYskG5u8w+1UjYTB2WbQSBArqFvCjQxyAaVaWXHvUQ=", "id"=>"2", "metric"=>{"name"=>"Code Coverage", "data_units"=>{"data_point"=>"1"}, "key"=>"coverage"}}
+  [4;36;1mMetric Load (0.1ms)[0m   [0;1mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+
+ActiveRecord::AssociationTypeMismatch (DataUnit(#70022547941080) expected, got Array(#70022597217820)):
+  app/controllers/metrics_controller.rb:64
+  app/controllers/metrics_controller.rb:63:in `update'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (34.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MetricsController#update (for 127.0.0.1 at 2010-08-04 16:09:24) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"mdYskG5u8w+1UjYTB2WbQSBArqFvCjQxyAaVaWXHvUQ=", "id"=>"2", "metric"=>{"name"=>"Code Coverage", "data_units"=>{"data_point"=>"1,2"}, "key"=>"coverage"}}
+  [4;35;1mMetric Load (0.2ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+
+ActiveRecord::AssociationTypeMismatch (DataUnit(#70022547397820) expected, got Array(#70022597217820)):
+  app/controllers/metrics_controller.rb:64
+  app/controllers/metrics_controller.rb:63:in `update'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (34.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MetricsController#update (for 127.0.0.1 at 2010-08-04 16:09:48) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"mdYskG5u8w+1UjYTB2WbQSBArqFvCjQxyAaVaWXHvUQ=", "id"=>"2", "metric"=>{"name"=>"Code Coverage", "data_units"=>{"data_point"=>"1,2"}, "key"=>"coverage"}}
+  [4;36;1mMetric Load (0.1ms)[0m   [0;1mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+
+ActiveRecord::AssociationTypeMismatch (DataUnit(#70022549044180) expected, got Array(#70022597217820)):
+  app/controllers/metrics_controller.rb:64
+  app/controllers/metrics_controller.rb:63:in `update'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (35.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (129.6ms)[0m   [0;1mCREATE TABLE "data_units" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "data_point" decimal) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (86.0ms)[0m   [0;1mCREATE TABLE "metrics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "key" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (112.7ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (86.1ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (90.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726182537')[0m
+  [4;36;1mSQL (99.8ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726181725')[0m
+  [4;35;1mSQL (90.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726181834')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (151.0ms)[0m   [0;1mCREATE TABLE "data_units" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "data_point" decimal) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (90.6ms)[0m   [0;1mCREATE TABLE "metrics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "key" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (117.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (98.6ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (90.6ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726182537')[0m
+  [4;36;1mSQL (91.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726181725')[0m
+  [4;35;1mSQL (91.4ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726181834')[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 19:51:10) [GET]
+
+ActionController::RoutingError (No route matches "/metric" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 19:51:12) [GET]
+  [4;36;1mMetric Load (0.3ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/metrics
+Rendering metrics/index
+Completed in 199ms (View: 106, DB: 0) | 200 OK [http://0.0.0.0/metrics]
+
+
+Processing MetricsController#show (for 127.0.0.1 at 2010-08-30 19:51:15) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mMetric Load (0.1ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+Rendering template within layouts/metrics
+Rendering metrics/show
+Completed in 111ms (View: 107, DB: 0) | 200 OK [http://0.0.0.0/metrics/2]
+
+
+Processing MetricsController#graph (for 127.0.0.1 at 2010-08-30 19:51:15) [GET]
+  Parameters: {"id"=>"2"}
+Completed in 580ms (View: 0, DB: 0) | 200 OK [http://0.0.0.0/metrics/graph/2]
+Streaming file my_fruity_graph.png
+
+
+Processing MetricsController#edit (for 127.0.0.1 at 2010-08-30 19:52:13) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mMetric Load (0.1ms)[0m   [0;1mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+Rendering template within layouts/metrics
+Rendering metrics/edit
+Completed in 35ms (View: 29, DB: 0) | 200 OK [http://0.0.0.0/metrics/2/edit]
+
+
+Processing MetricsController#update (for 127.0.0.1 at 2010-08-30 19:52:17) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"FwOE6R2ktD5mpjg6WQRu876mZmQxR6y5BxI1ChmK9nQ=", "id"=>"2", "metric"=>{"name"=>"Code Coverage", "data_units"=>{"data_point"=>"1"}, "key"=>"coverage"}}
+  [4;35;1mMetric Load (0.2ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+
+ActiveRecord::AssociationTypeMismatch (DataUnit(#70056399446540) expected, got Array(#70056457723420)):
+  app/controllers/metrics_controller.rb:64
+  app/controllers/metrics_controller.rb:63:in `update'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (24.3ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (164.7ms)[0m   [0;1mCREATE TABLE "data_units" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "data_point" decimal) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (121.6ms)[0m   [0;1mCREATE TABLE "metrics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "key" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (101.9ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (88.5ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (90.6ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726182537')[0m
+  [4;36;1mSQL (108.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726181725')[0m
+  [4;35;1mSQL (91.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726181834')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (123.7ms)[0m   [0;1mCREATE TABLE "data_units" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "data_point" decimal) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (87.7ms)[0m   [0;1mCREATE TABLE "metrics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "key" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (111.7ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (87.2ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (57.2ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726182537')[0m
+  [4;36;1mSQL (58.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726181725')[0m
+  [4;35;1mSQL (58.2ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726181834')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (133.5ms)[0m   [0;1mCREATE TABLE "data_units" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "data_point" decimal) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (92.3ms)[0m   [0;1mCREATE TABLE "metrics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "key" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (123.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (100.7ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (99.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726182537')[0m
+  [4;36;1mSQL (99.8ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726181725')[0m
+  [4;35;1mSQL (99.8ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726181834')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateMetrics (20100726181725)
+Migrating to CreateDataUnits (20100726181834)
+Migrating to AddDataPointToDataUnit (20100726182537)
+Migrating to AddMetricIdToDataUnit (20100831000132)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "data_units" ADD "metric_id" number[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100831000132')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("data_units")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("metrics")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (151.0ms)[0m   [0;1mCREATE TABLE "data_units" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "data_point" decimal, "metric_id" decimal) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (97.5ms)[0m   [0;1mCREATE TABLE "metrics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "key" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (76.9ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (63.6ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (57.2ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100831000132')[0m
+  [4;36;1mSQL (58.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726182537')[0m
+  [4;35;1mSQL (74.8ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726181725')[0m
+  [4;36;1mSQL (74.8ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726181834')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (205.7ms)[0m   [0;1mCREATE TABLE "data_units" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "data_point" decimal, "metric_id" decimal) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (88.9ms)[0m   [0;1mCREATE TABLE "metrics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "key" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (101.5ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (89.1ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (82.3ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100831000132')[0m
+  [4;36;1mSQL (83.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726182537')[0m
+  [4;35;1mSQL (83.2ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726181725')[0m
+  [4;36;1mSQL (124.9ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726181834')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (139.2ms)[0m   [0;1mCREATE TABLE "data_units" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "data_point" decimal, "metric_id" decimal) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (98.0ms)[0m   [0;1mCREATE TABLE "metrics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "key" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (92.4ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (73.2ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (57.3ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100831000132')[0m
+  [4;36;1mSQL (58.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726182537')[0m
+  [4;35;1mSQL (58.2ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726181725')[0m
+  [4;36;1mSQL (58.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726181834')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (130.9ms)[0m   [0;1mCREATE TABLE "data_units" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "data_point" decimal, "metric_id" decimal) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (96.1ms)[0m   [0;1mCREATE TABLE "metrics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "key" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (111.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (96.2ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (90.6ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100831000132')[0m
+  [4;36;1mSQL (83.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726182537')[0m
+  [4;35;1mSQL (83.2ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726181725')[0m
+  [4;36;1mSQL (83.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726181834')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (119.7ms)[0m   [0;1mCREATE TABLE "data_units" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "data_point" decimal, "metric_id" decimal) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (84.9ms)[0m   [0;1mCREATE TABLE "metrics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "key" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (80.5ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (60.1ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (65.6ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100831000132')[0m
+  [4;36;1mSQL (66.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726182537')[0m
+  [4;35;1mSQL (66.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726181725')[0m
+  [4;36;1mSQL (66.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726181834')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (136.2ms)[0m   [0;1mCREATE TABLE "data_units" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "data_point" decimal, "metric_id" decimal) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (91.8ms)[0m   [0;1mCREATE TABLE "metrics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "key" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (123.6ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (100.3ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (98.9ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100831000132')[0m
+  [4;36;1mSQL (99.8ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726182537')[0m
+  [4;35;1mSQL (141.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726181725')[0m
+  [4;36;1mSQL (91.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726181834')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (167.2ms)[0m   [0;1mCREATE TABLE "data_units" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "data_point" decimal, "metric_id" decimal) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (86.8ms)[0m   [0;1mCREATE TABLE "metrics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "key" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (103.9ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (61.5ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (57.3ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100831000132')[0m
+  [4;36;1mSQL (58.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726182537')[0m
+  [4;35;1mSQL (58.2ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726181725')[0m
+  [4;36;1mSQL (66.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726181834')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (130.0ms)[0m   [0;1mCREATE TABLE "data_units" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "data_point" decimal, "metric_id" decimal) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (97.1ms)[0m   [0;1mCREATE TABLE "metrics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "key" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (110.7ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (97.0ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (91.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100831000132')[0m
+  [4;36;1mSQL (83.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726182537')[0m
+  [4;35;1mSQL (83.2ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726181725')[0m
+  [4;36;1mSQL (83.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726181834')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (134.6ms)[0m   [0;1mCREATE TABLE "data_units" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "data_point" decimal, "metric_id" decimal) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (98.3ms)[0m   [0;1mCREATE TABLE "metrics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "key" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (125.4ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (73.5ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (57.3ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100831000132')[0m
+  [4;36;1mSQL (58.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726182537')[0m
+  [4;35;1mSQL (58.2ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726181725')[0m
+  [4;36;1mSQL (58.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726181834')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (119.8ms)[0m   [0;1mCREATE TABLE "data_units" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "data_point" decimal, "metric_id" decimal) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (86.8ms)[0m   [0;1mCREATE TABLE "metrics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "key" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (104.4ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (86.2ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (90.6ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100831000132')[0m
+  [4;36;1mSQL (91.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726182537')[0m
+  [4;35;1mSQL (99.8ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726181725')[0m
+  [4;36;1mSQL (99.9ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726181834')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (131.6ms)[0m   [0;1mCREATE TABLE "data_units" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "data_point" decimal, "metric_id" decimal) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (88.4ms)[0m   [0;1mCREATE TABLE "metrics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "key" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (102.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (63.6ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (57.3ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100831000132')[0m
+  [4;36;1mSQL (58.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726182537')[0m
+  [4;35;1mSQL (58.2ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726181725')[0m
+  [4;36;1mSQL (58.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726181834')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (141.2ms)[0m   [0;1mCREATE TABLE "data_units" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "data_point" decimal, "metric_id" decimal) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (89.5ms)[0m   [0;1mCREATE TABLE "metrics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "key" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (117.5ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (90.5ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (90.6ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100831000132')[0m
+  [4;36;1mSQL (83.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726182537')[0m
+  [4;35;1mSQL (83.2ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726181725')[0m
+  [4;36;1mSQL (91.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726181834')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (123.3ms)[0m   [0;1mCREATE TABLE "data_units" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "data_point" decimal, "metric_id" decimal) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (90.5ms)[0m   [0;1mCREATE TABLE "metrics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "key" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (109.1ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (90.2ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (57.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100831000132')[0m
+  [4;36;1mSQL (149.9ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726182537')[0m
+  [4;35;1mSQL (58.2ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726181725')[0m
+  [4;36;1mSQL (58.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726181834')[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 20:19:30) [GET]
+
+ActionController::RoutingError (No route matches "/puss/data/1/1" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (137.2ms)[0m   [0;1mCREATE TABLE "data_units" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "data_point" decimal, "metric_id" decimal) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (95.5ms)[0m   [0;1mCREATE TABLE "metrics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "key" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (112.3ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (94.9ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (90.6ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100831000132')[0m
+  [4;36;1mSQL (83.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726182537')[0m
+  [4;35;1mSQL (91.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726181725')[0m
+  [4;36;1mSQL (91.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726181834')[0m
+
+
+Processing MetricsController#show (for 127.0.0.1 at 2010-08-30 20:21:10) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mMetric Load (0.1ms)[0m   [0;1mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+Rendering template within layouts/metrics
+Rendering metrics/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/metrics/2]
+
+
+Processing MetricsController#graph (for 127.0.0.1 at 2010-08-30 20:21:10) [GET]
+  Parameters: {"id"=>"2"}
+Completed in 350ms (View: 0, DB: 0) | 200 OK [http://0.0.0.0/metrics/graph/2]
+Streaming file my_fruity_graph.png
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (123.7ms)[0m   [0;1mCREATE TABLE "data_units" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "data_point" decimal, "metric_id" decimal) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (85.7ms)[0m   [0;1mCREATE TABLE "metrics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "key" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (138.9ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (85.4ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (91.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100831000132')[0m
+  [4;36;1mSQL (91.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726182537')[0m
+  [4;35;1mSQL (99.9ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100726181725')[0m
+  [4;36;1mSQL (99.9ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100726181834')[0m
+
+
+Processing PushController#index (for 127.0.0.1 at 2010-08-30 20:22:32) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: data):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PushController#data (for 127.0.0.1 at 2010-08-30 20:22:36) [GET]
+  Parameters: {"data"=>"2", "id"=>"1"}
+  [4;35;1mMetric Load (0.1ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 1) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Metric with ID=1):
+  app/controllers/push_controller.rb:3:in `data'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (20.6ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 20:22:45) [GET]
+
+ActionController::RoutingError (No route matches "/metric" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 20:22:48) [GET]
+  [4;36;1mMetric Load (0.2ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/metrics
+Rendering metrics/index
+Completed in 40ms (View: 36, DB: 0) | 200 OK [http://0.0.0.0/metrics]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 20:22:57) [GET]
+
+ActionController::RoutingError (No route matches "/metric" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PushController#data (for 127.0.0.1 at 2010-08-30 20:23:04) [GET]
+  Parameters: {"data"=>"1", "id"=>"2"}
+  [4;35;1mMetric Load (0.1ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+  [4;36;1mDataUnit Create (0.2ms)[0m   [0;1mINSERT INTO "data_units" ("created_at", "updated_at", "data_point", "metric_id") VALUES('2010-08-31 00:23:04', '2010-08-31 00:23:04', 1.0, 2.0)[0m
+Completed in 134ms (View: 0, DB: 0) | 200 OK [http://0.0.0.0/push/2/data/1]
+
+
+Processing PushController#data (for 127.0.0.1 at 2010-08-30 20:23:07) [GET]
+  Parameters: {"data"=>"2", "id"=>"2"}
+  [4;35;1mMetric Load (0.1ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+  [4;36;1mDataUnit Create (0.1ms)[0m   [0;1mINSERT INTO "data_units" ("created_at", "updated_at", "data_point", "metric_id") VALUES('2010-08-31 00:23:07', '2010-08-31 00:23:07', 2.0, 2.0)[0m
+Completed in 143ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/push/2/data/2]
+
+
+Processing PushController#data (for 127.0.0.1 at 2010-08-30 20:23:09) [GET]
+  Parameters: {"data"=>"3", "id"=>"2"}
+  [4;35;1mMetric Load (0.2ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+  [4;36;1mDataUnit Create (0.1ms)[0m   [0;1mINSERT INTO "data_units" ("created_at", "updated_at", "data_point", "metric_id") VALUES('2010-08-31 00:23:09', '2010-08-31 00:23:09', 3.0, 2.0)[0m
+Completed in 133ms (View: 0, DB: 0) | 200 OK [http://0.0.0.0/push/2/data/3]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 20:23:15) [GET]
+
+ActionController::RoutingError (No route matches "/metric/2" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 20:23:18) [GET]
+
+ActionController::RoutingError (No route matches "/metric" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 20:23:20) [GET]
+  [4;35;1mMetric Load (0.3ms)[0m   [0mSELECT * FROM "metrics" [0m
+Rendering template within layouts/metrics
+Rendering metrics/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/metrics]
+
+
+Processing MetricsController#show (for 127.0.0.1 at 2010-08-30 20:23:22) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mMetric Load (0.1ms)[0m   [0;1mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+Rendering template within layouts/metrics
+Rendering metrics/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/metrics/2]
+
+
+Processing MetricsController#graph (for 127.0.0.1 at 2010-08-30 20:23:22) [GET]
+  Parameters: {"id"=>"2"}
+Completed in 226ms (View: 0, DB: 0) | 200 OK [http://0.0.0.0/metrics/graph/2]
+Streaming file my_fruity_graph.png
+
+
+Processing MetricsController#edit (for 127.0.0.1 at 2010-08-30 20:23:42) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mMetric Load (0.1ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+Rendering template within layouts/metrics
+Rendering metrics/edit
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://0.0.0.0/metrics/2/edit]
+
+
+Processing MetricsController#edit (for 127.0.0.1 at 2010-08-30 20:23:59) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mMetric Load (0.1ms)[0m   [0;1mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+Rendering template within layouts/metrics
+Rendering metrics/edit
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://0.0.0.0/metrics/2/edit]
+
+
+Processing MetricsController#show (for 127.0.0.1 at 2010-08-30 20:24:04) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mMetric Load (0.1ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+Rendering template within layouts/metrics
+Rendering metrics/show
+Completed in 8ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/metrics/2]
+
+
+Processing MetricsController#graph (for 127.0.0.1 at 2010-08-30 20:24:04) [GET]
+  Parameters: {"id"=>"2"}
+Completed in 374ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/metrics/graph/2]
+Streaming file my_fruity_graph.png
+
+
+Processing MetricsController#show (for 127.0.0.1 at 2010-08-30 20:24:41) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mMetric Load (0.1ms)[0m   [0;1mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+Rendering template within layouts/metrics
+Rendering metrics/show
+
+ActionView::TemplateError (undefined method `data_points' for #<Metric:0x7f6e8da77e18>) on line #13 of app/views/metrics/show.html.erb:
+10: 
+11: <p>
+12:   <b>Data:</b>
+13:   <%=h @metric.data_points.inspect%>
+14: </p>
+15: 
+16: <p>
+
+    app/views/metrics/show.html.erb:13
+    app/controllers/metrics_controller.rb:18:in `show'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (25.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MetricsController#show (for 127.0.0.1 at 2010-08-30 20:24:58) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mMetric Load (0.1ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+Rendering template within layouts/metrics
+Rendering metrics/show
+  [4;36;1mDataUnit Load (0.1ms)[0m   [0;1mSELECT * FROM "data_units" WHERE ("data_units".metric_id = 2) [0m
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://0.0.0.0/metrics/2]
+
+
+Processing MetricsController#graph (for 127.0.0.1 at 2010-08-30 20:24:58) [GET]
+  Parameters: {"id"=>"2"}
+Completed in 374ms (View: 0, DB: 0) | 200 OK [http://0.0.0.0/metrics/graph/2]
+Streaming file my_fruity_graph.png
+
+
+Processing MetricsController#show (for 127.0.0.1 at 2010-08-30 20:25:23) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mMetric Load (0.1ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+Rendering template within layouts/metrics
+Rendering metrics/show
+  [4;36;1mDataUnit Load (0.2ms)[0m   [0;1mSELECT * FROM "data_units" WHERE ("data_units".metric_id = 2) [0m
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://0.0.0.0/metrics/2]
+
+
+Processing MetricsController#graph (for 127.0.0.1 at 2010-08-30 20:25:23) [GET]
+  Parameters: {"id"=>"2"}
+Completed in 252ms (View: 0, DB: 0) | 200 OK [http://0.0.0.0/metrics/graph/2]
+Streaming file my_fruity_graph.png
+
+
+Processing MetricsController#show (for 127.0.0.1 at 2010-08-30 20:25:24) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mMetric Load (0.1ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+Rendering template within layouts/metrics
+Rendering metrics/show
+  [4;36;1mDataUnit Load (0.2ms)[0m   [0;1mSELECT * FROM "data_units" WHERE ("data_units".metric_id = 2) [0m
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://0.0.0.0/metrics/2]
+
+
+Processing MetricsController#graph (for 127.0.0.1 at 2010-08-30 20:25:24) [GET]
+  Parameters: {"id"=>"2"}
+Completed in 219ms (View: 0, DB: 0) | 200 OK [http://0.0.0.0/metrics/graph/2]
+Streaming file my_fruity_graph.png
+
+
+Processing MetricsController#show (for 127.0.0.1 at 2010-08-30 20:27:22) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mMetric Load (0.1ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+Rendering template within layouts/metrics
+Rendering metrics/show
+  [4;36;1mDataUnit Load (0.2ms)[0m   [0;1mSELECT * FROM "data_units" WHERE ("data_units".metric_id = 2) [0m
+Completed in 44ms (View: 40, DB: 0) | 200 OK [http://0.0.0.0/metrics/2]
+
+
+Processing MetricsController#graph (for 127.0.0.1 at 2010-08-30 20:27:22) [GET]
+  Parameters: {"id"=>"2"}
+Completed in 221ms (View: 0, DB: 0) | 200 OK [http://0.0.0.0/metrics/graph/2]
+Streaming file my_fruity_graph.png
+
+
+Processing MetricsController#show (for 127.0.0.1 at 2010-08-30 20:33:01) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mMetric Load (0.1ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+Rendering template within layouts/metrics
+Rendering metrics/show
+  [4;36;1mDataUnit Load (0.1ms)[0m   [0;1mSELECT * FROM "data_units" WHERE ("data_units".metric_id = 2) [0m
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://0.0.0.0/metrics/2]
+
+
+Processing MetricsController#graph (for 127.0.0.1 at 2010-08-30 20:33:01) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mMetric Load (0.1ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+
+NoMethodError (undefined method `data_units' for nil:NilClass):
+  app/controllers/metrics_controller.rb:98:in `graph'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (18.5ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MetricsController#graph (for 127.0.0.1 at 2010-08-30 20:33:09) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mMetric Load (0.1ms)[0m   [0;1mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+
+NoMethodError (undefined method `data_units' for nil:NilClass):
+  app/controllers/metrics_controller.rb:98:in `graph'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (18.2ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MetricsController#graph (for 127.0.0.1 at 2010-08-30 20:33:19) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mMetric Load (0.1ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+  [4;36;1mDataUnit Load (0.2ms)[0m   [0;1mSELECT * FROM "data_units" WHERE ("data_units".metric_id = 2) [0m
+Completed in 204ms (View: 0, DB: 0) | 200 OK [http://0.0.0.0/metrics/graph/2]
+Streaming file my_fruity_graph.png
+
+
+Processing MetricsController#edit (for 127.0.0.1 at 2010-08-30 20:38:57) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mMetric Load (0.1ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+Rendering template within layouts/metrics
+Rendering metrics/edit
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://0.0.0.0/metrics/2/edit]
+
+
+Processing MetricsController#show (for 127.0.0.1 at 2010-08-30 20:40:07) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mMetric Load (0.2ms)[0m   [0;1mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+Rendering template within layouts/metrics
+Rendering metrics/show
+  [4;35;1mDataUnit Load (0.2ms)[0m   [0mSELECT * FROM "data_units" WHERE ("data_units".metric_id = 2) [0m
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://0.0.0.0/metrics/2]
+
+
+Processing MetricsController#graph (for 127.0.0.1 at 2010-08-30 20:40:07) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mMetric Load (0.1ms)[0m   [0;1mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+  [4;35;1mDataUnit Load (0.2ms)[0m   [0mSELECT * FROM "data_units" WHERE ("data_units".metric_id = 2) [0m
+Completed in 255ms (View: 0, DB: 0) | 200 OK [http://0.0.0.0/metrics/graph/2]
+Streaming file my_fruity_graph.png
+
+
+Processing MetricsController#show (for 127.0.0.1 at 2010-08-30 20:40:07) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mMetric Load (0.1ms)[0m   [0;1mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+Rendering template within layouts/metrics
+Rendering metrics/show
+  [4;35;1mDataUnit Load (0.1ms)[0m   [0mSELECT * FROM "data_units" WHERE ("data_units".metric_id = 2) [0m
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://0.0.0.0/metrics/2]
+
+
+Processing MetricsController#graph (for 127.0.0.1 at 2010-08-30 20:40:07) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mMetric Load (0.1ms)[0m   [0;1mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+  [4;35;1mDataUnit Load (0.2ms)[0m   [0mSELECT * FROM "data_units" WHERE ("data_units".metric_id = 2) [0m
+Completed in 209ms (View: 0, DB: 0) | 200 OK [http://0.0.0.0/metrics/graph/2]
+Streaming file my_fruity_graph.png
+
+
+Processing MetricsController#edit (for 127.0.0.1 at 2010-08-30 20:40:34) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mMetric Load (0.1ms)[0m   [0;1mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+Rendering template within layouts/metrics
+Rendering metrics/edit
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://0.0.0.0/metrics/2/edit]
+
+
+Processing MetricsController#edit (for 127.0.0.1 at 2010-08-30 20:49:11) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mMetric Load (0.1ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+Rendering template within layouts/metrics
+Rendering metrics/edit
+  [4;36;1mDataUnit Load (0.1ms)[0m   [0;1mSELECT * FROM "data_units" WHERE ("data_units".metric_id = 2) [0m
+Completed in 14ms (View: 10, DB: 0) | 200 OK [http://0.0.0.0/metrics/2/edit]
+
+
+Processing MetricsController#edit (for 127.0.0.1 at 2010-08-30 20:50:27) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mMetric Load (0.1ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+Rendering template within layouts/metrics
+Rendering metrics/edit
+  [4;36;1mDataUnit Load (0.2ms)[0m   [0;1mSELECT * FROM "data_units" WHERE ("data_units".metric_id = 2) [0m
+Completed in 18ms (View: 14, DB: 0) | 200 OK [http://0.0.0.0/metrics/2/edit]
+
+
+Processing MetricsController#edit (for 127.0.0.1 at 2010-08-30 20:51:19) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mMetric Load (0.1ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+Rendering template within layouts/metrics
+Rendering metrics/edit
+  [4;36;1mDataUnit Load (0.2ms)[0m   [0;1mSELECT * FROM "data_units" WHERE ("data_units".metric_id = 2) [0m
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://0.0.0.0/metrics/2/edit]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 20:51:22) [GET]
+  [4;35;1mMetric Load (0.2ms)[0m   [0mSELECT * FROM "metrics" [0m
+Rendering template within layouts/metrics
+Rendering metrics/index
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/metrics]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 20:54:10) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 20:54:10) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 20:54:10) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 20:54:13) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 20:55:15) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 20:55:16) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 20:55:17) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 20:55:17) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 20:55:17) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 20:55:18) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 20:55:22) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 20:55:23) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 20:55:23) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 20:56:01) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 20:57:17) [GET]
+
+NameError (uninitialized constant MetricController):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (15.1ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 20:57:17) [GET]
+
+NameError (uninitialized constant MetricController):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (14.9ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 20:57:24) [GET]
+  [4;36;1mMetric Load (0.2ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/metrics
+Rendering metrics/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 21:04:06) [GET]
+
+ActionController::RoutingError (No route matches "/public/home.html" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:10:29) [GET]
+  [4;35;1mMetric Load (0.2ms)[0m   [0mSELECT * FROM "metrics" [0m
+Rendering template within layouts/metrics
+Rendering metrics/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:10:55) [GET]
+  [4;36;1mMetric Load (0.2ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 10ms (View: 7, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 21:10:55) [GET]
+
+ActionController::RoutingError (No route matches "/css/style.css" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 21:10:55) [GET]
+
+ActionController::RoutingError (No route matches "/images/c1_i1.png" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 21:10:55) [GET]
+
+ActionController::RoutingError (No route matches "/images/c2_i6.png" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 21:10:55) [GET]
+
+ActionController::RoutingError (No route matches "/images/c2_i2.png" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 21:10:55) [GET]
+
+ActionController::RoutingError (No route matches "/images/c2_i3.png" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 21:10:55) [GET]
+
+ActionController::RoutingError (No route matches "/images/c2_i4.png" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 21:10:55) [GET]
+
+ActionController::RoutingError (No route matches "/images/c2_i5.png" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 21:10:55) [GET]
+
+ActionController::RoutingError (No route matches "/images/c3_i7.png" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:11:31) [GET]
+  [4;35;1mMetric Load (0.2ms)[0m   [0mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 21:11:31) [GET]
+
+ActionController::RoutingError (No route matches "/images/c1_i1.png" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 21:11:31) [GET]
+
+ActionController::RoutingError (No route matches "/images/c2_i6.png" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 21:11:31) [GET]
+
+ActionController::RoutingError (No route matches "/images/c2_i2.png" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 21:11:31) [GET]
+
+ActionController::RoutingError (No route matches "/images/c2_i3.png" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 21:11:31) [GET]
+
+ActionController::RoutingError (No route matches "/images/c2_i4.png" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 21:11:31) [GET]
+
+ActionController::RoutingError (No route matches "/images/c2_i5.png" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 21:11:31) [GET]
+
+ActionController::RoutingError (No route matches "/images/c3_i7.png" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 21:11:31) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 21:11:31) [GET]
+
+ActionController::RoutingError (No route matches "/images/midBox1.png" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:12:24) [GET]
+  [4;36;1mMetric Load (0.2ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 43ms (View: 39, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 21:12:24) [GET]
+
+ActionController::RoutingError (No route matches "/images/c2_i6.png" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 21:12:24) [GET]
+
+ActionController::RoutingError (No route matches "/images/c2_i2.png" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 21:12:24) [GET]
+
+ActionController::RoutingError (No route matches "/images/c2_i3.png" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 21:12:24) [GET]
+
+ActionController::RoutingError (No route matches "/images/c2_i4.png" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 21:12:24) [GET]
+
+ActionController::RoutingError (No route matches "/images/c2_i5.png" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 21:12:24) [GET]
+
+ActionController::RoutingError (No route matches "/images/c3_i7.png" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 21:12:24) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 21:12:24) [GET]
+
+ActionController::RoutingError (No route matches "/images/midBox1.png" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:13:20) [GET]
+  [4;35;1mMetric Load (0.2ms)[0m   [0mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 21:13:20) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:13:33) [GET]
+  [4;36;1mMetric Load (0.2ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 21:13:33) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:13:56) [GET]
+  [4;35;1mMetric Load (0.2ms)[0m   [0mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 21:13:57) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:18:50) [GET]
+  [4;36;1mMetric Load (0.2ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 21:18:50) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:18:51) [GET]
+  [4;35;1mMetric Load (0.2ms)[0m   [0mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 21:18:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:19:01) [GET]
+  [4;36;1mMetric Load (0.2ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 42ms (View: 38, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 21:19:01) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:19:32) [GET]
+  [4;35;1mMetric Load (0.4ms)[0m   [0mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+
+ActionView::TemplateError (undefined method `now' for Data:Class) on line #31 of app/views/layouts/application.rhtml:
+28: 	<div class="contant_1_left">
+29: 	  <h2>
+30:        <%= yield :title %>
+31:        <span><%= h Data.now %></span>
+32:       </h2>
+33: 	  <br class="clear bottomClear" />
+34: 
+
+    app/views/layouts/application.rhtml:31:in `_run_rhtml_app47views47layouts47application46rhtml'
+    app/controllers/metrics_controller.rb:7:in `index'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (24.7ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:23:34) [GET]
+  [4;36;1mMetric Load (0.2ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+
+ActionView::TemplateError (undefined method `today' for Data:Class) on line #31 of app/views/layouts/application.rhtml:
+28: 	<div class="contant_1_left">
+29: 	  <h2>
+30:        <%= yield :title %>
+31:        <span><%= h Data.today %></span>
+32:       </h2>
+33: 	  <br class="clear bottomClear" />
+34: 
+
+    app/views/layouts/application.rhtml:31:in `_run_rhtml_app47views47layouts47application46rhtml'
+    app/controllers/metrics_controller.rb:7:in `index'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (26.0ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:23:35) [GET]
+  [4;35;1mMetric Load (0.2ms)[0m   [0mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+
+ActionView::TemplateError (undefined method `today' for Data:Class) on line #31 of app/views/layouts/application.rhtml:
+28: 	<div class="contant_1_left">
+29: 	  <h2>
+30:        <%= yield :title %>
+31:        <span><%= h Data.today %></span>
+32:       </h2>
+33: 	  <br class="clear bottomClear" />
+34: 
+
+    app/views/layouts/application.rhtml:31:in `_run_rhtml_app47views47layouts47application46rhtml'
+    app/controllers/metrics_controller.rb:7:in `index'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (62.5ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:23:41) [GET]
+  [4;36;1mMetric Load (0.4ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 14ms (View: 7, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-30 21:23:41) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:25:44) [GET]
+  [4;35;1mMetric Load (0.2ms)[0m   [0mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:25:45) [GET]
+  [4;36;1mMetric Load (0.2ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:25:54) [GET]
+  [4;35;1mMetric Load (0.3ms)[0m   [0mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:26:11) [GET]
+  [4;36;1mMetric Load (0.2ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:27:03) [GET]
+  [4;35;1mMetric Load (0.4ms)[0m   [0mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 11ms (View: 5, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:27:53) [GET]
+  [4;36;1mMetric Load (0.2ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:28:14) [GET]
+  [4;35;1mMetric Load (0.3ms)[0m   [0mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing MetricsController#show (for 127.0.0.1 at 2010-08-30 21:28:34) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mMetric Load (0.1ms)[0m   [0;1mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering metrics/show
+  [4;35;1mDataUnit Load (0.1ms)[0m   [0mSELECT * FROM "data_units" WHERE ("data_units".metric_id = 2) [0m
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://0.0.0.0/metrics/2]
+
+
+Processing MetricsController#stylesheets to css (for 127.0.0.1 at 2010-08-30 21:28:34) [GET]
+  Parameters: {"id"=>"style"}
+
+ActionController::UnknownAction (No action responded to stylesheets. Actions: create, destroy, edit, graph, index, new, show, and update):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MetricsController#graph (for 127.0.0.1 at 2010-08-30 21:28:34) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mMetric Load (0.1ms)[0m   [0;1mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+  [4;35;1mDataUnit Load (0.2ms)[0m   [0mSELECT * FROM "data_units" WHERE ("data_units".metric_id = 2) [0m
+Completed in 439ms (View: 0, DB: 0) | 200 OK [http://0.0.0.0/metrics/graph/2]
+Streaming file my_fruity_graph.png
+
+
+Processing MetricsController#show (for 127.0.0.1 at 2010-08-30 21:28:37) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mMetric Load (0.1ms)[0m   [0;1mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering metrics/show
+  [4;35;1mDataUnit Load (0.2ms)[0m   [0mSELECT * FROM "data_units" WHERE ("data_units".metric_id = 2) [0m
+Completed in 41ms (View: 5, DB: 0) | 200 OK [http://0.0.0.0/metrics/2]
+
+
+Processing MetricsController#stylesheets to css (for 127.0.0.1 at 2010-08-30 21:28:37) [GET]
+  Parameters: {"id"=>"style"}
+
+ActionController::UnknownAction (No action responded to stylesheets. Actions: create, destroy, edit, graph, index, new, show, and update):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MetricsController#graph (for 127.0.0.1 at 2010-08-30 21:28:37) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mMetric Load (0.2ms)[0m   [0;1mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+  [4;35;1mDataUnit Load (0.3ms)[0m   [0mSELECT * FROM "data_units" WHERE ("data_units".metric_id = 2) [0m
+Completed in 215ms (View: 0, DB: 0) | 200 OK [http://0.0.0.0/metrics/graph/2]
+Streaming file my_fruity_graph.png
+
+
+Processing MetricsController#stylesheets to css (for 127.0.0.1 at 2010-08-30 21:29:58) [GET]
+  Parameters: {"id"=>"style"}
+
+ActionController::UnknownAction (No action responded to stylesheets. Actions: create, destroy, edit, graph, index, new, show, and update):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MetricsController#show (for 127.0.0.1 at 2010-08-30 21:30:51) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mMetric Load (0.2ms)[0m   [0;1mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering metrics/show
+  [4;35;1mDataUnit Load (0.2ms)[0m   [0mSELECT * FROM "data_units" WHERE ("data_units".metric_id = 2) [0m
+Completed in 15ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/metrics/2]
+
+
+Processing MetricsController#show (for 127.0.0.1 at 2010-08-30 21:30:51) [GET]
+  Parameters: {"id"=>"<link href="}
+  [4;36;1mMetric Load (0.1ms)[0m   [0;1mSELECT * FROM "metrics" WHERE ("metrics"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Metric with ID=<link href=):
+  app/controllers/metrics_controller.rb:16:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (19.7ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (not_found)
+
+
+Processing MetricsController#graph (for 127.0.0.1 at 2010-08-30 21:30:51) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mMetric Load (0.1ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+  [4;36;1mDataUnit Load (0.2ms)[0m   [0;1mSELECT * FROM "data_units" WHERE ("data_units".metric_id = 2) [0m
+Completed in 218ms (View: 0, DB: 0) | 200 OK [http://0.0.0.0/metrics/graph/2]
+Streaming file my_fruity_graph.png
+
+
+Processing MetricsController#show (for 127.0.0.1 at 2010-08-30 21:31:11) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mMetric Load (0.1ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering metrics/show
+  [4;36;1mDataUnit Load (0.2ms)[0m   [0;1mSELECT * FROM "data_units" WHERE ("data_units".metric_id = 2) [0m
+Completed in 13ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/metrics/2]
+
+
+Processing MetricsController#graph (for 127.0.0.1 at 2010-08-30 21:31:11) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mMetric Load (0.1ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+  [4;36;1mDataUnit Load (0.2ms)[0m   [0;1mSELECT * FROM "data_units" WHERE ("data_units".metric_id = 2) [0m
+Completed in 234ms (View: 0, DB: 0) | 200 OK [http://0.0.0.0/metrics/graph/2]
+Streaming file my_fruity_graph.png
+
+
+Processing MetricsController#show (for 127.0.0.1 at 2010-08-30 21:33:10) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mMetric Load (0.1ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering metrics/show
+  [4;36;1mDataUnit Load (0.2ms)[0m   [0;1mSELECT * FROM "data_units" WHERE ("data_units".metric_id = 2) [0m
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/metrics/2]
+
+
+Processing MetricsController#graph (for 127.0.0.1 at 2010-08-30 21:33:10) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mMetric Load (0.1ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+  [4;36;1mDataUnit Load (0.2ms)[0m   [0;1mSELECT * FROM "data_units" WHERE ("data_units".metric_id = 2) [0m
+Completed in 386ms (View: 0, DB: 0) | 200 OK [http://0.0.0.0/metrics/graph/2]
+Streaming file my_fruity_graph.png
+
+
+Processing MetricsController#show (for 127.0.0.1 at 2010-08-30 21:35:41) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mMetric Load (0.1ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering metrics/show
+  [4;36;1mDataUnit Load (0.2ms)[0m   [0;1mSELECT * FROM "data_units" WHERE ("data_units".metric_id = 2) [0m
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://0.0.0.0/metrics/2]
+
+
+Processing MetricsController#graph (for 127.0.0.1 at 2010-08-30 21:35:41) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mMetric Load (0.1ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+  [4;36;1mDataUnit Load (0.2ms)[0m   [0;1mSELECT * FROM "data_units" WHERE ("data_units".metric_id = 2) [0m
+Completed in 214ms (View: 0, DB: 0) | 200 OK [http://0.0.0.0/metrics/graph/2]
+Streaming file my_fruity_graph.png
+
+
+Processing MetricsController#show (for 127.0.0.1 at 2010-08-30 21:36:11) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mMetric Load (0.1ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering metrics/show
+  [4;36;1mDataUnit Load (0.1ms)[0m   [0;1mSELECT * FROM "data_units" WHERE ("data_units".metric_id = 2) [0m
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://0.0.0.0/metrics/2]
+
+
+Processing MetricsController#graph (for 127.0.0.1 at 2010-08-30 21:36:11) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mMetric Load (0.1ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+  [4;36;1mDataUnit Load (0.2ms)[0m   [0;1mSELECT * FROM "data_units" WHERE ("data_units".metric_id = 2) [0m
+Completed in 346ms (View: 0, DB: 0) | 200 OK [http://0.0.0.0/metrics/graph/2]
+Streaming file my_fruity_graph.png
+
+
+Processing MetricsController#show (for 127.0.0.1 at 2010-08-30 21:37:33) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mMetric Load (0.1ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering metrics/show
+  [4;36;1mDataUnit Load (0.2ms)[0m   [0;1mSELECT * FROM "data_units" WHERE ("data_units".metric_id = 2) [0m
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://0.0.0.0/metrics/2]
+
+
+Processing MetricsController#graph (for 127.0.0.1 at 2010-08-30 21:37:33) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mMetric Load (0.1ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+  [4;36;1mDataUnit Load (0.2ms)[0m   [0;1mSELECT * FROM "data_units" WHERE ("data_units".metric_id = 2) [0m
+Completed in 474ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/metrics/graph/2]
+Streaming file my_fruity_graph.png
+
+
+Processing MetricsController#edit (for 127.0.0.1 at 2010-08-30 21:37:43) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mMetric Load (0.1ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering metrics/edit
+  [4;36;1mDataUnit Load (0.2ms)[0m   [0;1mSELECT * FROM "data_units" WHERE ("data_units".metric_id = 2) [0m
+Completed in 17ms (View: 11, DB: 0) | 200 OK [http://0.0.0.0/metrics/2/edit]
+
+
+Processing MetricsController#edit (for 127.0.0.1 at 2010-08-30 21:38:12) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mMetric Load (0.1ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering metrics/edit
+  [4;36;1mDataUnit Load (0.2ms)[0m   [0;1mSELECT * FROM "data_units" WHERE ("data_units".metric_id = 2) [0m
+Completed in 18ms (View: 14, DB: 0) | 200 OK [http://0.0.0.0/metrics/2/edit]
+
+
+Processing MetricsController#new (for 127.0.0.1 at 2010-08-30 21:38:59) [GET]
+New metric
+Rendering template within layouts/application
+Rendering metrics/new
+Completed in 10ms (View: 7, DB: 0) | 200 OK [http://0.0.0.0/metrics/new]
+
+
+Processing MetricsController#new (for 127.0.0.1 at 2010-08-30 21:39:19) [GET]
+New metric
+Rendering template within layouts/application
+Rendering metrics/new
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://0.0.0.0/metrics/new]
+
+
+Processing MetricsController#new (for 127.0.0.1 at 2010-08-30 21:39:34) [GET]
+New metric
+Rendering template within layouts/application
+Rendering metrics/new
+Completed in 14ms (View: 7, DB: 0) | 200 OK [http://0.0.0.0/metrics/new]
+
+
+Processing MetricsController#show (for 127.0.0.1 at 2010-08-30 21:39:43) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mMetric Load (0.1ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering metrics/show
+  [4;36;1mDataUnit Load (0.1ms)[0m   [0;1mSELECT * FROM "data_units" WHERE ("data_units".metric_id = 2) [0m
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://0.0.0.0/metrics/2]
+
+
+Processing MetricsController#graph (for 127.0.0.1 at 2010-08-30 21:39:43) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mMetric Load (0.2ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+  [4;36;1mDataUnit Load (0.3ms)[0m   [0;1mSELECT * FROM "data_units" WHERE ("data_units".metric_id = 2) [0m
+Completed in 608ms (View: 0, DB: 0) | 200 OK [http://0.0.0.0/metrics/graph/2]
+Streaming file my_fruity_graph.png
+
+
+Processing MetricsController#edit (for 127.0.0.1 at 2010-08-30 21:39:45) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mMetric Load (0.1ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering metrics/edit
+  [4;36;1mDataUnit Load (0.2ms)[0m   [0;1mSELECT * FROM "data_units" WHERE ("data_units".metric_id = 2) [0m
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://0.0.0.0/metrics/2/edit]
+
+
+Processing MetricsController#show (for 127.0.0.1 at 2010-08-30 21:39:46) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mMetric Load (0.1ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering metrics/show
+  [4;36;1mDataUnit Load (0.1ms)[0m   [0;1mSELECT * FROM "data_units" WHERE ("data_units".metric_id = 2) [0m
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://0.0.0.0/metrics/2]
+
+
+Processing MetricsController#graph (for 127.0.0.1 at 2010-08-30 21:39:47) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mMetric Load (0.1ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+  [4;36;1mDataUnit Load (0.2ms)[0m   [0;1mSELECT * FROM "data_units" WHERE ("data_units".metric_id = 2) [0m
+Completed in 204ms (View: 0, DB: 0) | 200 OK [http://0.0.0.0/metrics/graph/2]
+Streaming file my_fruity_graph.png
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:45:33) [GET]
+  [4;35;1mMetric Load (0.2ms)[0m   [0mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:45:46) [GET]
+  [4;36;1mMetric Load (0.2ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 39ms (View: 36, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:45:47) [GET]
+  [4;35;1mMetric Load (0.3ms)[0m   [0mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:45:48) [GET]
+  [4;36;1mMetric Load (0.2ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:45:48) [GET]
+  [4;35;1mMetric Load (0.3ms)[0m   [0mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:45:48) [GET]
+  [4;36;1mMetric Load (0.2ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:45:58) [GET]
+  [4;35;1mMetric Load (0.2ms)[0m   [0mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:46:40) [GET]
+  [4;36;1mMetric Load (0.2ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:46:47) [GET]
+  [4;35;1mMetric Load (0.2ms)[0m   [0mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:46:48) [GET]
+  [4;36;1mMetric Load (0.3ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 11ms (View: 5, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:46:48) [GET]
+  [4;35;1mMetric Load (0.3ms)[0m   [0mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:46:53) [GET]
+  [4;36;1mMetric Load (0.2ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 9ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:46:53) [GET]
+  [4;35;1mMetric Load (0.4ms)[0m   [0mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 11ms (View: 5, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:46:54) [GET]
+  [4;36;1mMetric Load (0.2ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:48:06) [GET]
+  [4;35;1mMetric Load (0.4ms)[0m   [0mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:48:07) [GET]
+  [4;36;1mMetric Load (0.2ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:48:07) [GET]
+  [4;35;1mMetric Load (0.3ms)[0m   [0mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:48:07) [GET]
+  [4;36;1mMetric Load (0.2ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:48:07) [GET]
+  [4;35;1mMetric Load (0.2ms)[0m   [0mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:48:13) [GET]
+  [4;36;1mMetric Load (0.2ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:48:24) [GET]
+  [4;35;1mMetric Load (0.2ms)[0m   [0mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:48:24) [GET]
+  [4;36;1mMetric Load (0.2ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:48:25) [GET]
+  [4;35;1mMetric Load (0.3ms)[0m   [0mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:49:16) [GET]
+  [4;36;1mMetric Load (0.2ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:49:16) [GET]
+  [4;35;1mMetric Load (0.2ms)[0m   [0mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:51:06) [GET]
+  [4;36;1mMetric Load (0.2ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/metrics]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:51:10) [GET]
+  [4;35;1mMetric Load (0.3ms)[0m   [0mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/metrics]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:51:13) [GET]
+  [4;36;1mMetric Load (0.2ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 10ms (View: 4, DB: 0) | 200 OK [http://localhost/metrics]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:51:14) [GET]
+  [4;35;1mMetric Load (0.2ms)[0m   [0mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/metrics]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:51:14) [GET]
+  [4;36;1mMetric Load (0.2ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/metrics]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:51:14) [GET]
+  [4;35;1mMetric Load (0.3ms)[0m   [0mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/metrics]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:51:30) [GET]
+  [4;36;1mMetric Load (0.2ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 10ms (View: 4, DB: 0) | 200 OK [http://localhost/metrics]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:51:31) [GET]
+  [4;35;1mMetric Load (0.2ms)[0m   [0mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/metrics]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:51:41) [GET]
+  [4;36;1mMetric Load (0.4ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/metrics]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:51:52) [GET]
+  [4;35;1mMetric Load (0.3ms)[0m   [0mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 39ms (View: 4, DB: 0) | 200 OK [http://localhost/metrics]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:52:02) [GET]
+  [4;36;1mMetric Load (0.2ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 10ms (View: 4, DB: 0) | 200 OK [http://localhost/metrics]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:53:02) [GET]
+  [4;35;1mMetric Load (0.2ms)[0m   [0mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/metrics]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:53:14) [GET]
+  [4;36;1mMetric Load (0.2ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/metrics]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:53:21) [GET]
+  [4;35;1mMetric Load (0.2ms)[0m   [0mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 39ms (View: 4, DB: 0) | 200 OK [http://localhost/metrics]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:53:49) [GET]
+  [4;36;1mMetric Load (0.2ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/metrics]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:53:50) [GET]
+  [4;35;1mMetric Load (0.2ms)[0m   [0mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/metrics]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:53:56) [GET]
+  [4;36;1mMetric Load (0.2ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/metrics]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:54:03) [GET]
+  [4;35;1mMetric Load (0.2ms)[0m   [0mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/metrics]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:54:18) [GET]
+  [4;36;1mMetric Load (0.2ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/metrics]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:54:56) [GET]
+  [4;35;1mMetric Load (0.2ms)[0m   [0mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/metrics]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:55:03) [GET]
+  [4;36;1mMetric Load (0.2ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/metrics]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:55:56) [GET]
+  [4;35;1mMetric Load (0.4ms)[0m   [0mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 45ms (View: 39, DB: 0) | 200 OK [http://localhost/metrics]
+
+
+Processing MetricsController#index (for 127.0.0.1 at 2010-08-30 21:57:09) [GET]
+  [4;36;1mMetric Load (0.4ms)[0m   [0;1mSELECT * FROM "metrics" [0m
+Rendering template within layouts/application
+Rendering metrics/index
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://localhost/metrics]
+
+
+Processing MetricsController#edit (for 127.0.0.1 at 2010-08-30 21:57:44) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mMetric Load (0.1ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering metrics/edit
+  [4;36;1mDataUnit Load (0.2ms)[0m   [0;1mSELECT * FROM "data_units" WHERE ("data_units".metric_id = 2) [0m
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/metrics/2/edit]
+
+
+Processing MetricsController#show (for 127.0.0.1 at 2010-08-30 21:58:24) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mMetric Load (0.2ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering metrics/show
+  [4;36;1mDataUnit Load (0.1ms)[0m   [0;1mSELECT * FROM "data_units" WHERE ("data_units".metric_id = 2) [0m
+Completed in 13ms (View: 6, DB: 0) | 200 OK [http://localhost/metrics/2]
+
+
+Processing MetricsController#graph (for 127.0.0.1 at 2010-08-30 21:58:24) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mMetric Load (0.1ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+  [4;36;1mDataUnit Load (0.2ms)[0m   [0;1mSELECT * FROM "data_units" WHERE ("data_units".metric_id = 2) [0m
+Completed in 618ms (View: 0, DB: 0) | 200 OK [http://localhost/metrics/graph/2]
+Streaming file my_fruity_graph.png
+
+
+Processing PushController#data (for 127.0.0.1 at 2010-08-30 21:58:58) [GET]
+  Parameters: {"data"=>"10", "id"=>"2"}
+  [4;35;1mMetric Load (0.1ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+  [4;36;1mDataUnit Create (0.2ms)[0m   [0;1mINSERT INTO "data_units" ("created_at", "updated_at", "data_point", "metric_id") VALUES('2010-08-31 01:58:58', '2010-08-31 01:58:58', 10.0, 2.0)[0m
+Completed in 115ms (View: 1, DB: 0) | 200 OK [http://localhost/push/2/data/10]
+
+
+Processing MetricsController#show (for 127.0.0.1 at 2010-08-30 21:59:01) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mMetric Load (0.1ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering metrics/show
+  [4;36;1mDataUnit Load (0.2ms)[0m   [0;1mSELECT * FROM "data_units" WHERE ("data_units".metric_id = 2) [0m
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/metrics/2]
+
+
+Processing MetricsController#graph (for 127.0.0.1 at 2010-08-30 21:59:01) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mMetric Load (0.1ms)[0m   [0mSELECT * FROM "metrics" WHERE ("metrics"."id" = 2) [0m
+  [4;36;1mDataUnit Load (0.2ms)[0m   [0;1mSELECT * FROM "data_units" WHERE ("data_units".metric_id = 2) [0m
+Completed in 200ms (View: 0, DB: 0) | 200 OK [http://localhost/metrics/graph/2]
+Streaming file my_fruity_graph.png

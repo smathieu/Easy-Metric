@@ -1,6 +1,8 @@
-<h1>Listing metrics</h1>
+<% content_for :title do %>
+  Listing metrics
+<% end %>
 
-<table>
+<table class="index-table">
   <tr>
     <th>Name</th>
     <th>Key</th>
@@ -10,9 +12,11 @@
   <tr>
     <td><%=h metric.name %></td>
     <td><%=h metric.key %></td>
-    <td><%= link_to 'Show', metric %></td>
-    <td><%= link_to 'Edit', edit_metric_path(metric) %></td>
-    <td><%= link_to 'Destroy', metric, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td id="crud-control">
+      <%= link_to 'Show', metric %>
+      <%= link_to 'Edit', edit_metric_path(metric) %>
+      <%= link_to 'Destroy', metric, :confirm => 'Are you sure?', :method => :delete %>
+    </td>
   </tr>
 <% end %>
 </table>

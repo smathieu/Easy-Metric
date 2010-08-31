@@ -1,11 +1,15 @@
-<p>
-  <b>Name:</b>
+<% content_for :title do %>
   <%=h @metric.name %>
-</p>
+<% end %>
 
 <p>
   <b>Key:</b>
   <%=h @metric.key %>
+</p>
+
+<p>
+  <b>Data:</b>
+  <%=h @metric.to_csv %>
 </p>
 
 <p>

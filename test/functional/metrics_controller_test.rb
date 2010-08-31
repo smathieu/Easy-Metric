@@ -14,7 +14,7 @@ class MetricsControllerTest < ActionController::TestCase
 
   test "should create metric" do
     assert_difference('Metric.count') do
-      post :create, :metric => { }
+      post :create, :metric => { :name => "some name", :key => "some key" }
     end
 
     assert_redirected_to metric_path(assigns(:metric))
@@ -49,6 +49,6 @@ class MetricsControllerTest < ActionController::TestCase
   end
 
   test "routing graph" do
-    assert_routing '/metrics/graph/1', { :controller => "metrics", :action => "graph", :id => "1" }
+    assert_routing '/metrics/1/graph', { :controller => "metrics", :action => "graph", :id => "1" }
   end
 end

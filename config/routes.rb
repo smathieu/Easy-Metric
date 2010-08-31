@@ -2,6 +2,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :metrics
   map.connect "metrics/:id/:action", :controller => 'metrics', :action => /[a-z_]+/i
 
+  map.connect "push/:id/:action/:data", :controller => 'push', :action => /[a-z_]+/i, :data => /.*/
+
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
@@ -34,7 +36,7 @@ ActionController::Routing::Routes.draw do |map|
   #   end
 
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
-  # map.root :controller => "welcome"
+  map.root :controller => "metrics"
 
   # See how all your routes lay out with "rake routes"
 

@@ -85,27 +85,25 @@ class MetricsController < ApplicationController
 
   def graph
     require 'gruff'
-    g = Gruff::Pie.new
+    @metric = Metric.find(params[:id])
+    g = Gruff::Line.new
 
     g.theme = {
       :colors => %w(orange purple green red),
       :marker_color => 'blue',
       :background_colors => %w(white white)
     }
-    g.title = "My Graph" 
-    g.data("Apples", [1, 2, 3, 4, 4, 3])
-    g.data("Oranges", [4, 8, 7, 9, 8, 9])
-    g.data("Watermelon", [2, 3, 1, 5, 6, 8])
-    g.data("Peaches", [9, 9, 10, 8, 7, 9])
-
-    g.labels = {0 => '2003', 2 => '2004', 4 => '2005'}
+    data = []
+    @metric.data_units.each{ |data_unit|
+      data.push data_unit.data_point
+    }
+    g.data "Data", data
 
     filename = 'my_fruity_graph.png'
 
     # this writes the file to the hard drive for caching
     # and then writes it to the screen.
-    #
-
+    
     g.write(filename)
 
     send_file filename, :type => 'image/png', :disposition => 'inline'
