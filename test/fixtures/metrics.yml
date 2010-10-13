@@ -2,8 +2,8 @@
 
 one:
   name: MyString
-  key: MyString
+  key: MyKeyString
 
 two:
   name: MyString
-  key: MyString
+  key: MyKeyString

@@ -1,3 +1,5 @@
+require 'gruff'
+
 class MetricsController < ApplicationController
   # GET /metrics
   # GET /metrics.xml
@@ -84,7 +86,6 @@ class MetricsController < ApplicationController
   end
 
   def graph
-    require 'gruff'
     @metric = Metric.find(params[:id])
     g = Gruff::Line.new
 
@@ -94,18 +95,17 @@ class MetricsController < ApplicationController
       :background_colors => %w(white white)
     }
     data = []
+    labels = {}
+    i = 0
     @metric.data_units.each{ |data_unit|
       data.push data_unit.data_point
+      labels[i] = data_unit.when.strftime("%d/%m/%y")
+      i+=1
     }
     g.data "Data", data
+    g.labels = labels
 
-    filename = 'my_fruity_graph.png'
 
-    # this writes the file to the hard drive for caching
-    # and then writes it to the screen.
-    
-    g.write(filename)
-
-    send_file filename, :type => 'image/png', :disposition => 'inline'
+    send_data g.to_blob, :type => 'image/png', :disposition => 'inline'
   end
 end
