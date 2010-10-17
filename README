@@ -1,4 +1,4 @@
-Easy metric lets you collect information about your build system, or any other automated process, easily. 
+Easy Metric lets you collect information about your build system, or any other automated process, easily. 
 
 SETUP INSTRUCTIONS
 =============
@@ -8,17 +8,26 @@ SETUP INSTRUCTIONS
 3. Lauch the server.
     ruby script/server
 
-
 CONFIGURE
 =============
 
 To start collecting data, simply create a new metric and assign it a key. The key will be used as an identifier when you push data to Easy Metric. Once you've added a metric, you can view the data in the main view. 
-
 
 USAGE
 =============
 
 Pushing new data to a metric is as simple as a http GET request. Just use your favorite scripting language and make a request to http://YOUR_SERVER/push/your_key/data/your_value. Where your key is the name of the key you previously added and your_value is the value you want to add.
 
+EXAMPLE
+=============
+
+Say you want to track code coverage of your code. You can use your favorite coverage tool for your language. In Easy Metric, you can create a "Code Coverage" metric with "coverage" as the key. In your build script, once you have measured code coverage, you can push the data to Easy Metric. Easy Metric will keep track of the current timestamp for the data and display how the data progresses overtime. 
+
+For this example, if your code coverage is 97.6%, you could do something similar to this to push your data:
+
+curl --get "http://localhost:3000/push/coverage/data/97.6"
+
+SUPPORT
+=============
 
 For support, contact me at me@simonmathieu.com.
