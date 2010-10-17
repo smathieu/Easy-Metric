@@ -1,5 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :metrics
+  map.resources :data_units
   map.connect "metrics/:id/:action", :controller => 'metrics', :action => /[a-z_]+/i
   map.connect "data_units/:id/:action", :controller => 'data_units', :action => /[a-z_]+/i
   map.connect "push/:id/:action/:data", :controller => 'push', :action => /[a-z_]+/i, :data => /.*/

@@ -2,7 +2,10 @@
   Editing: <%=h @metric.name %>
 <% end %>
 
-
+<p>
+<b>Pro tip:</b> You can push new data to this metric programmatically by doing a GET request to: <u><%= url_for :action => 'data', :controller => 'push', :id => @metric.key, :data => "YOUR_DATA", :only_path => false %></u>, where YOUR_DATA is the number you which to add to the graph.
+</p>
+<br/>
 <% form_for(@metric) do |f| %>
   <%= f.error_messages %>
 
@@ -14,14 +17,20 @@
     <%= f.label :key %><br />
     <%= f.text_field :key %>
   </p>
+
+  <%= render :partial => 'metrics/show_graph' %>
+  <p>
+    <%= f.label "Data Points:"  %>
+  </p>
    <% f.fields_for :data_units do |data_point_form| %>
-      <p>
-        <%= f.label :data_point  %>
-      </p>
       <p>
         <div>
           <%= data_point_form.text_field :data_point%>
           <%= data_point_form.text_field :when %>
+          <%= 
+              data_point = data_point_form.object 
+              link_to 'X', data_point, :confirm => 'Are you sure?', :method => :delete 
+          %>
         </div>
 
       </p>
