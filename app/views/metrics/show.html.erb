@@ -12,10 +12,7 @@
   <%=h @metric.to_csv %>
 </p>
 
-<p>
-  <img src="<%="/metrics/graph/#{@metric.id}"%>"/>
-</p>
-
+<%= render :partial => 'metrics/show_graph' %>
 
 <%= link_to 'Edit', edit_metric_path(@metric) %> |
 <%= link_to 'Back', metrics_path %>

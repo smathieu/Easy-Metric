@@ -6,7 +6,7 @@ class DataUnitsControllerTest < ActionController::TestCase
     assert true
   end
 
-  test "should destroy date unit" do
+  test "should destroy data unit" do
     assert_difference('DataUnit.count', -1) do
       delete :destroy, :id => data_units(:one).to_param
     end
