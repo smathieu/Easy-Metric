@@ -31,7 +31,8 @@ class MetricsControllerTest < ActionController::TestCase
   end
 
   test "should update metric" do
-    put :update, :id => metrics(:one).to_param, :metric => { }
+    put :update, :id => metrics(:one).to_param, 
+      :metric => {:name => "my name", :key => "my key"}
     assert_redirected_to metric_path(assigns(:metric))
   end
 

@@ -1,0 +1,22 @@
+<% content_for :title do %>
+  Listing Aggregates
+<% end %>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+
+<% @aggregates.each do |aggregate| %>
+  <tr>
+    <td><%=h aggregate.name %></td>
+    <td><%= link_to 'Show', aggregate %></td>
+    <td><%= link_to 'Edit', edit_aggregate_path(aggregate) %></td>
+    <td><%= link_to 'Destroy', aggregate, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New aggregate', new_aggregate_path %>

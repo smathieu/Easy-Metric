@@ -9,7 +9,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100917011239) do
+ActiveRecord::Schema.define(:version => 20101127021249) do
+
+  create_table "aggregates", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "data_units", :force => true do |t|
     t.datetime "created_at"
@@ -17,6 +23,13 @@ ActiveRecord::Schema.define(:version => 20100917011239) do
     t.decimal  "data_point"
     t.decimal  "metric_id"
     t.datetime "when"
+  end
+
+  create_table "metric_aggregations", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.decimal  "metric_id"
+    t.decimal  "aggregate_id"
   end
 
   create_table "metrics", :force => true do |t|

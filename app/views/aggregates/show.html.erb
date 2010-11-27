@@ -1,0 +1,20 @@
+<% content_for :title do %>
+  Listing Aggregates
+<% end %>
+
+<p>
+  <b>Name:</b>
+  <%=h @aggregate.name %>
+
+  <ul>
+    <% @aggregate.metrics.each do |metric| %>
+      <li>
+      <%=h metric.key %>
+      </li>
+    <% end %>
+  </ul>
+</p>
+
+
+<%= link_to 'Edit', edit_aggregate_path(@aggregate) %> |
+<%= link_to 'Back', aggregates_path %>

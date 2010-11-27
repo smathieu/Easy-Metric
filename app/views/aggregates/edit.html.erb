@@ -1,0 +1,25 @@
+<% content_for :title do %>
+  Editing Aggregate
+<% end %>
+
+<% form_for(@aggregate) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+
+   <% f.fields_for :metrics do |mf| %>
+     <p>
+       <%= mf.label "Key" %><br />
+       <%= mf.text_field :key%>
+     </p>
+    <% end %>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @aggregate %> |
+<%= link_to 'Back', aggregates_path %>
